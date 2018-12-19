@@ -12,7 +12,7 @@ app.post('/scrape', async (req, res) => {
     const page = await browser.newPage();
     await page.goto(url, { waitUntil: 'load' });
     const content =  await page.content();
-    res.json({ content });
+    res.send(content);
   } catch (err) {
     res.status(500).json({ err });
   }
