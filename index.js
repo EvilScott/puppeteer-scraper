@@ -7,7 +7,7 @@ app.use(bodyParser.json());
 
 app.post('/scrape', async (req, res) => {
   const url = req.body.url;
-  // handle no url
+  // TODO handle no url
   try {
     const page = await browser.newPage();
     await page.goto(url, { waitUntil: 'load' });
